@@ -122,15 +122,24 @@
   </section>
     <section>
         <h2> All other elements </h2>
+        <search>
+            <form action="./search/">
+                <label>Search </label>
+                <input type="search" id="search" name="query">
+                <button type="submit">Search</button>
+            </form>
+        </search>
         <hgroup>
             <h3>Heading 3</h3>
             <p>This is text.</p>
         </hgroup>
+
         <p>
                 <b>bold</b>
                 <strong>strong</strong>
                 <i>i</i>
                 <abbr>USA</abbr>
+            <kbd>kbd</kbd>
         </p>
                 <dfn>a11y</dfn>
 
@@ -145,6 +154,10 @@
                 R
                     E
         </pre>
+        <address>
+            Rosario Ortiz
+            <a href="mailto:rosario@example.com"></a><br>
+        </address>
 
         <ins>ins</ins>
         <svg width="220" height="157" viewBox="0 0 220 157" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -176,7 +189,9 @@
         </iframe>
         <br>
 
-        <div>div</div>
+        <div>
+            <progress value="25" max="100"></progress>
+        </div>
         <span>span</span>
 
         <table>
@@ -214,11 +229,30 @@
             </form>
 
         </dialog>
+        <blockquote>
+            "Hello."
+        </blockquote>
+        <details>
+            <summary>My favorite character</summary>
+            Keroppi
+        </details>
+        <menu>
+            <li>eggs</li>
+            <li>bacon</li>
+            <li>waffles</li>
+        </menu>
 
         <form>
             <fieldset>
-                <legend>Legend</legend>
-                <select>
+                <legend>Fill out my form!</legend>
+                <datalist id="franchises">
+                    <option value="Sanrio">Sanrio</option>
+                    <option value="Tokidoki">Tokidoki</option>
+                </datalist>
+                <label for="franchise">Pick a franchise</label>
+                <input id="franchise" list="franchises"></input>
+                <label for="character">Pick a character</label>
+                <select id="character">
                     <optgroup label="Sanrio">
                         <option>Hello Kitty</option>
                         <option>Keroppi</option>
@@ -228,6 +262,7 @@
                         <option>Adios</option>
                     </optgroup>
                 </select>
+
                 <label for="wtv">Type whatever</label>
                 <textarea id="wtv" name="whatever"></textarea>
             </fieldset>
@@ -236,9 +271,13 @@
         </form>
 
         <audio controls src="media/myinstants.mp3"></audio>
-        <picture>
-            <img alt="No image here." src="#">
-        </picture>
+        <figure>
+            <picture>
+                <img alt="No image here." src="#">
+            </picture>
+            <figcaption>Nothing at all.</figcaption>
+        </figure>
+
         <video controls src="https://upload.wikimedia.org/wikipedia/commons/d/d1/Arsenal-Tottenham_Carling_Cup_Second_Leg_End.ogv"> </video>
         <cite>
             <a href="https://commons.wikimedia.org/wiki/File:Arsenal-Tottenham_Carling_Cup_Second_Leg_End.ogv">
