@@ -7,6 +7,7 @@
   <meta name="keywords" content="Rosario Ortiz, Now" >
   <meta name="author" content="Rosario Ortiz" >
   <meta name="viewport" content="width=device-width, initial-scale=1.0" >
+  <link href="style/main.css" rel="stylesheet" type="text/css">
   <link href="images/favicon.ico" rel="icon" >
 
 </head>
@@ -36,7 +37,7 @@
       </ul>
     </nav>
   </header>
-  <main>
+  <main id="now">
     <header>
       <h1>What I'm doing</h1>
       <p>as of <time datetime="2025-07-13 01:34">2025-07-13 01:34</time></p>
@@ -61,7 +62,11 @@
         Now that I realize increasing in the same spot
         <em>does</em> make an obvious difference, I will be staggering them in my next project.
       </p>
-      <img src="images/crochet-071325-min.jpeg" alt="Photo of orange ball of yarn positioned above a roughly circular orange crochet fabric with paperclips marking its rows along one of its radii.">
+      <picture>
+        <source media="(width < 1024px)" srcset="images/pill-bottle-crochet-200.jpg">
+        <source media="(width < 1500px)" srcset="images/pill-bottle-crochet-1k.jpg">
+        <img src="images/pill-bottle-crochet-1k.jpg.jpeg" alt="Photo of orange ball of yarn positioned above a roughly circular orange crochet fabric with paperclips marking its rows along one of its radii.">
+      </picture>
     </section>
   </main>
   <footer></footer>
