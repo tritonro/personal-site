@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>Ab</title>
+  <title>No JS Contact Form Demo</title>
   <meta name="description" content="A demo of a contact form that sends data to httpbin.org">
   <meta name="keywords" content="HTML Form">
   <meta name="author" content="Rosario Ortiz" >
@@ -10,45 +10,54 @@
   <link href="/style/main.css" rel="stylesheet" type="text/css">
   <link href="../favicon.ico" type="image/x-icon" rel="icon" >
 </head>
-<nav>
-  <ul>
-    <li>
-      <a href="/src/index.html">Home</a>
-    </li>
-    <li>
-      <a href="/src/about.html">About</a>
-    </li>
-    <li>
-      <a href="/src/now.html">Now</a>
-    </li>
-    <li>
-      <a href="/src/projects.html">Projects</a>
-    </li>
-    <li>
-      <a href="/src/resume.html">Resum&#233; </a>
-    </li>
-    <li>
-      <a href="/src/404.html">FAIQ</a>
-    </li>
+<header>
+  <nav>
+    <ul>
+      <li>
+        <a href="index.html">Home</a>
+      </li>
+      <li>
+        <a href="about.html">About</a>
+      </li>
+      <li>
+        <a href="now.html">Now</a>
+      </li>
+      <li>
+        <a href="projects.html">Projects</a>
+      </li>
+      <li>
+        <a href="resume.html">Resum&#233; </a>
+      </li>
+      <li>
+        <a href="404.html">FAIQ</a>
+      </li>
 
-  </ul>
-</nav>
+    </ul>
+  </nav>
+</header>
 <body>
 <h1>Contact Form Demo</h1>
   <main id="contact-form">
     <form method="post" action="https://httpbin.org/post">
       <fieldset>
         <legend>Contact Info</legend>
-        <label for="name">Full Name</label>
-        <input type="text" id="name" name="name" placeholder="Jane Doe" required autofocus tabindex="1">
-        <label for="email">Email</label>
-        <input type="email" id="email" name="email" placeholder="janedoe@example.com"  required tabindex="2"></input>
-        <label for="comment" >Comments</label>
-        <textarea name="comment" id="comment" cols="30" rows="10" maxlength="120" tabindex="3" required></textarea>
+
+        <input type="tel" id="phone" name="phone" placeholder="(555) 555-5555" tabindex="4">
         <label for="phone">Phone Number</label>
-        <input type="tel" id="phone" name="phone" placeholder="(555) 555-5555" tabindex="4"></input>
+
+        <textarea name="comment" id="comment" cols="30" rows="10" maxlength="120" tabindex="3" required></textarea>
+        <label for="comment" >Comments</label>
+
+        <input type="email" id="email" name="email" placeholder="janedoe@example.com"  required tabindex="2">
+        <label for="email">Email</label>
+
+        <input type="text" id="name" name="name" placeholder="Jane Doe" required autofocus tabindex="1">
+        <label for="name">Full Name</label>
+
+        <p>Fields labeled with an asterisk are required.</p>
+
       </fieldset>
-        <input hidden type="checkbox" name="possible_bot" value="true"></input>
+        <input hidden type="checkbox" name="possible_bot" value="true">
         <output name="error" for="name email comment phone"> </output>
         <output name="info" for="name email comment phone"> </output>
         <button type="submit" tabindex="5">Submit</button>

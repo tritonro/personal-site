@@ -1,24 +1,31 @@
-
 @layer  layout {
+    @font-face {
+        font-family: "Inclusive Sans";
+        src: url(../fonts/InclusiveSans-Regular.woff2) format('woff2'),
+        url(../fonts/InclusiveSans-Regular.woff) format('woff');
+        font-weight: normal;
+        font-style: normal;
+        font-display: swap;
+    }
     :root {
-        margin:0;
-        padding:0;
+        margin: 0;
+        padding: 0;
         box-sizing: border-box;
     }
 
-    header{
+    header {
         width: 100dvw;
     }
 
-    nav{
+    nav {
         min-width: 30rem;
         width: 100%;
         height: 6dvh;
         margin: 0;
         padding: 0;
 
-        ul{
-            display:flex;
+        ul {
+            display: flex;
             flex-direction: row;
             justify-content: space-evenly;
         }
@@ -27,50 +34,41 @@
             list-style: none;
         }
 
-        a {
+        a,p {
             font-size: 1rem;
-        }
-
-        a,p {;
-            @font-face {
-                font-family: 'Inclusive Sans';
-                src: url('InclusiveSans-Regular.woff2') format('woff2'),
-                url('InclusiveSans-Regular.woff') format('woff');
-                font-weight: normal;
-                font-style: normal;
-                font-display: swap;
-            }
-
-
+            font-family: "Inclusive Sans", sans-serif;
         }
     }
 
     footer {
-        margin-block-start:  2.5rem;
+        margin-block-start: 2.5rem;
         padding: 2.5em 0em;
         width: 100%;
 
-        p{
+        p {
             text-align: center;
         }
+
         background-color: rgba(104, 114, 87, 70);
     }
+
     /*Insert media query for small screens (width< 30rem) to create hamburglar menu*/
-    @media (max-width: 1024px){
+    @media (max-width: 1024px) {
 
     }
-    #home{
+    #home {
         text-align: center;
         font-optical-sizing: auto;
-        h1{
+
+        h1 {
             font-size: 2rem;
         }
 
-        h2{
+        h2 {
             font-size: 1.5rem;
         }
 
-        p{
+        p {
             font-size: 1rem;
             font-family: "Inclusive Sans", sans-serif;
         }
@@ -79,40 +77,45 @@
             font-size: 1rem;
             font-family: "Inclusive Sans", sans-serif;
         }
-        #top-content{
+
+        #top-content {
             max-width: 44em;
             margin: auto;
         }
 
-        #home-columns{
+        #home-columns {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
             grid-template-rows: auto;
-            justify-content:center;
+            justify-content: center;
         }
     }
 
-    #about{
+    #about {
         margin: auto 1dvw;
-        h1{
+
+        h1 {
             font-size: 2rem;
             text-align: center;
         }
-        p, a{
+
+        p, a {
             font-family: "Inclusive Sans", sans-serif;
         }
-        .grid-content{
+
+        .grid-content {
             text-align: start;
-            display:grid;
+            display: grid;
             grid-template-columns: 30% 70%;
-            @media (max-width: 1024px){
+            @media (max-width: 1024px) {
                 grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
             }
         }
 
-        aside{
-            grid-column-start:1;
+        aside {
+            grid-column-start: 1;
             margin-inline: 3dvw;
+
             img {
                 min-width: 200px;
                 width: 15dvw;
@@ -123,56 +126,61 @@
 
         }
 
-        .not-aside{
+        .not-aside {
             margin-inline: 3dvw;
         }
 
-        @media(max-width:860px){
-            .not-aside{
-                grid-row-start:2;
+        @media (max-width: 860px) {
+            .not-aside {
+                grid-row-start: 2;
             }
         }
-        .not-aside{
-            -grid-column-start:2;
+
+        .not-aside {
+            -grid-column-start: 2;
         }
 
-        img{
+        img {
             width: 15dvw;
         }
     }
 
-    #now{
-        p, a{
+    #now {
+        p, a {
             font-family: "Inclusive Sans", sans-serif;
         }
-        img{
+
+        img {
             height: 30dvh;
         }
     }
 
-    #projects{
-        p, a{
+    #projects {
+        p, a {
             font-family: "Inclusive Sans", sans-serif;
         }
-        li{
+
+        li {
             list-style: none;
         }
     }
 
     #404 {
-        h1{
+        h1 {
             font-size: 2rem;
         }
-        p{
+
+        p {
             font-size: 1.5rem;
         }
-        p, a{
+
+        p, a {
             font-family: "Inclusive Sans", sans-serif;
         }
     }
 
-    #resume{
-        main{
+    #resume {
+        main {
             margin: 0 auto;
             max-width: 38em;
             padding: 50px;
@@ -184,8 +192,10 @@
 
         body > ul {
             width: 100%;
+
             > li {
                 list-style-type: none;
+
                 ul > li {
                     list-style-type: disc;
                 }
@@ -197,6 +207,7 @@
             padding-inline-start: 1.7em;
             margin-top: 1em;
         }
+
         li > ol, li > ul {
             margin-top: 0;
         }
@@ -204,13 +215,16 @@
         p {
             margin: 1em 0;
         }
+
         h1, h2, h3, h4, h5, h6 {
             margin-top: 1.4em;
         }
+
         h5, h6 {
             font-size: 1em;
             font-style: italic;
         }
+
         h6 {
             font-weight: normal;
         }
@@ -223,32 +237,52 @@
             display: block;
             font-variant-numeric: lining-nums tabular-nums;
         }
+
         table caption {
             margin-bottom: 0.75em;
         }
+
         tbody {
             margin-top: 0.5em;
         }
+
         th {
             padding: 0.25em 0.5em;
         }
+
         td {
             padding: 0.125em 0.5em 0.25em 0.5em;
             width: 50%;
         }
+
         header {
             margin-bottom: 4em;
             text-align: center;
         }
 
-        span.smallcaps{font-variant: small-caps;}
-        div.columns{display: flex; gap: min(4vw, 1.5em);}
-        div.column{flex: auto; overflow-x: auto;}
-        div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+        span.smallcaps {
+            font-variant: small-caps;
+        }
+
+        div.columns {
+            display: flex;
+            gap: min(4vw, 1.5em);
+        }
+
+        div.column {
+            flex: auto;
+            overflow-x: auto;
+        }
+
+        div.hanging-indent {
+            margin-left: 1.5em;
+            text-indent: -1.5em;
+        }
+
         /* The extra [class] is a hack that increases specificity enough to
            override a similar rule in reveal.js */
 
-        div{
+        div {
             margin: auto;
             text-align: center;
         }
@@ -258,6 +292,7 @@
                 font-size: 0.9em;
                 padding: 12px;
             }
+
             h1 {
                 font-size: 1.8em;
             }
@@ -266,37 +301,39 @@
             body {
                 font-size: 12pt;
             }
+
             p, h2, h3 {
                 orphans: 3;
                 widows: 3;
             }
+
             h2, h3, h4 {
                 page-break-after: avoid;
             }
         }
 
     }
-    legend{
-        color:white;
+
+    legend {
+        color: white;
     }
+
     label {
         color: white;
     }
-    fieldset{
-        display:flex;
-        flex-direction: column;
 
-        }
+    fieldset {
+        display: flex;
+        flex-direction: column-reverse;
+    }
 
-    input:user-invalid{
-            border: 2px dashed red;
-        ::after{
-            content: "Invalid input. Please double check this field!";
+    input[required] + label, textarea[required] + label {
+        &::after {
+            content: "*" / "Required";
         }
     }
 
 }
-
 @layer theme {
     :root{
         --dark-nav-color:#687257ff;
@@ -304,6 +341,7 @@
         --dark-heading-color: #EBF5DE;
         --dark-link-color: #C0C77A;
         --footer-text-color: #C0C77A;
+        --form-validation-error-color: #FF6161;
     }
 
     nav {
@@ -379,12 +417,29 @@
             color: var(--resume-text-color, white);
         }
 
+        input[required]:invalid + label, textarea[required]:invalid + label{
 
+            &::after {
+                color: var(--form-validation-error-color, tomato);
+            }
+        }
 
+        input:user-invalid {
+            border: 2px dashed var(--form-validation-error-color, tomato);
+        }
+
+        form button {
+            background-color: var(--dark-nav-color, DarkOliveGreen);
+            color: white;
+            border-color:var(--dark-heading-color);
+            margin-block-start: 1em;
+            border-radius: 5%;
+            font-size: 1.5em;
+            font-family: "Inclusive Sans", sans-serif;
 
         }
+
     }
 
 
 
-}
