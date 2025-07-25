@@ -44,6 +44,17 @@
 
         }
     }
+
+    footer {
+        margin-block-start:  2.5rem;
+        padding: 2.5em 0em;
+        width: 100%;
+
+        p{
+            text-align: center;
+        }
+        background-color: rgba(104, 114, 87, 70);
+    }
     /*Insert media query for small screens (width< 30rem) to create hamburglar menu*/
     @media (max-width: 1024px){
 
@@ -160,6 +171,129 @@
         }
     }
 
+    #resume{
+        main{
+            margin: 0 auto;
+            max-width: 38em;
+            padding: 50px;
+            hyphens: auto;
+            overflow-wrap: break-word;
+            text-rendering: optimizeLegibility;
+            font-kerning: normal;
+        }
+
+        body > ul {
+            width: 100%;
+            > li {
+                list-style-type: none;
+                ul > li {
+                    list-style-type: disc;
+                }
+            }
+
+        }
+
+        ol, ul {
+            padding-inline-start: 1.7em;
+            margin-top: 1em;
+        }
+        li > ol, li > ul {
+            margin-top: 0;
+        }
+
+        p {
+            margin: 1em 0;
+        }
+        h1, h2, h3, h4, h5, h6 {
+            margin-top: 1.4em;
+        }
+        h5, h6 {
+            font-size: 1em;
+            font-style: italic;
+        }
+        h6 {
+            font-weight: normal;
+        }
+
+        table {
+            margin: 1em 0;
+            border-collapse: collapse;
+            width: 100%;
+            overflow-x: auto;
+            display: block;
+            font-variant-numeric: lining-nums tabular-nums;
+        }
+        table caption {
+            margin-bottom: 0.75em;
+        }
+        tbody {
+            margin-top: 0.5em;
+        }
+        th {
+            padding: 0.25em 0.5em;
+        }
+        td {
+            padding: 0.125em 0.5em 0.25em 0.5em;
+            width: 50%;
+        }
+        header {
+            margin-bottom: 4em;
+            text-align: center;
+        }
+
+        span.smallcaps{font-variant: small-caps;}
+        div.columns{display: flex; gap: min(4vw, 1.5em);}
+        div.column{flex: auto; overflow-x: auto;}
+        div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+        /* The extra [class] is a hack that increases specificity enough to
+           override a similar rule in reveal.js */
+
+        div{
+            margin: auto;
+            text-align: center;
+        }
+
+        @media (max-width: 600px) {
+            body {
+                font-size: 0.9em;
+                padding: 12px;
+            }
+            h1 {
+                font-size: 1.8em;
+            }
+        }
+        @media print {
+            body {
+                font-size: 12pt;
+            }
+            p, h2, h3 {
+                orphans: 3;
+                widows: 3;
+            }
+            h2, h3, h4 {
+                page-break-after: avoid;
+            }
+        }
+
+    }
+    legend{
+        color:white;
+    }
+    label {
+        color: white;
+    }
+    fieldset{
+        display:flex;
+        flex-direction: column;
+
+        }
+
+    input:user-invalid{
+            border: 2px dashed red;
+        ::after{
+            content: "Invalid input. Please double check this field!";
+        }
+    }
 
 }
 
@@ -169,7 +303,7 @@
         --dark-bg-color: #2e2e2f;
         --dark-heading-color: #EBF5DE;
         --dark-link-color: #C0C77A;
-
+        --footer-text-color: #C0C77A;
     }
 
     nav {
@@ -186,7 +320,71 @@
         color: white;
     }
     a{
-        color:  var(--dark-link-color,#C0C77A);
+        color:  var(--dark-link-color, #C0C77A);
     }
+
+    footer > p {
+        color: var(--footer-text-color, lightgray);
+    }
+
+    #resume {
+        --resume-text-color: white;
+        html{
+            background-color: #fdfdfd;
+        }
+        main{
+            border: 2px dashed var(--dark-heading-color);
+            width: max-content;
+
+            td, li, a{
+                color: var(--resume-text-color, white);
+            }
+
+        }
+
+        @media print {
+            --resume-text-color: black;
+            html {
+                background-color: white;
+            }
+
+            main{
+                border: none;
+            }
+            h1, h2, h3, h4, h5, h6, p {
+                color: var(--resume-text-color, black);
+            }
+            .math{
+                color: var(--resume-text-color, black);
+            }
+
+            header, footer{
+                display: none;
+            }
+        }
+    }
+
+
+        table{
+            color: var(--resume-text-color, white);
+        }
+        tbody {
+            border-top: 1px solid var(--resume-text-color, white);
+            border-bottom: 1px solid var(--resume-text-color, white);
+        }
+        th {
+            border-top: 1px solid var(--resume-text-color, white);
+        }
+        .math{
+            color: var(--resume-text-color, white);
+        }
+
+
+
+
+        }
+    }
+
+
 
 }
