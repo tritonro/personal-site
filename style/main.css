@@ -7,6 +7,14 @@
         font-style: normal;
         font-display: swap;
     }
+
+    @font-face {
+        font-family: "Literata";
+        src: url(/fonts/Literata-Regular.woff2) format('woff2'),
+        url(/fonts/Literata-Regular.woff) format('woff'),
+        url(/fonts/Literata-Regular.ttf) format('truetype');
+        font-display: swap;
+    }
     :root {
         margin: 0;
         padding: 0;
@@ -14,31 +22,66 @@
     }
 
     header {
-        width: 100dvw;
+        display: flex;
+        flex-direction: column;
+        margin-top: 0;
+        nav {
+            min-width: 30rem;
+            width: 100%;
+            height: 6dvh;
+            margin: 0;
+            padding: 0;
+
+            ul {
+                display: flex;
+                flex-direction: row;
+                justify-content: space-evenly;
+            }
+
+            li {
+                list-style: none;
+                border: 1px solid grey;
+                border-radius: 4px;
+                min-width: fit-content;
+                flex: 1;
+                text-align: center;
+                margin: 0 1dvh;
+            }
+        }
+            input {
+                visibility: hidden;
+            }
+        }
+    body{
+        margin:0;
+    }
+    h1, h2{
+        font-family: "Literata", serif;
     }
 
-    nav {
-        min-width: 30rem;
-        width: 100%;
-        height: 6dvh;
-        margin: 0;
-        padding: 0;
-
-        ul {
-            display: flex;
-            flex-direction: row;
-            justify-content: space-evenly;
-        }
-
-        li {
-            list-style: none;
-        }
 
         a,p {
             font-size: 1rem;
             font-family: "Inclusive Sans", sans-serif;
+            line-height:  1.6rem;
+
         }
+    project-container{
+        margin-inline-start: 1dvw;
     }
+    project-card{
+        img {
+            max-width: 200px;
+            grid-columns: 1;
+        }
+      div{
+          grid-columns: 2;
+          border: 1px dashed green;
+      }
+
+    }
+
+
 
     footer {
         margin-block-start: 2.5rem;
@@ -49,16 +92,28 @@
             text-align: center;
         }
 
-        background-color: rgba(104, 114, 87, 70);
-    }
-
-    /*Insert media query for small screens (width< 30rem) to create hamburglar menu*/
-    @media (max-width: 1024px) {
-
+        -background-color: rgba(104, 114, 87, 70);
     }
     #home {
-        text-align: center;
+        -text-align: center;
         font-optical-sizing: auto;
+        height: 90dvh;
+        margin-block-start: 6%;
+
+        #top-content {
+            max-width: 41em;
+            margin: auto;
+            margin-block-end: 4%;
+        }
+        #home-columns {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            grid-template-rows: auto;
+            justify-content: center;
+        }
+        section{
+            margin: auto;
+        }
 
         h1 {
             font-size: 2rem;
@@ -72,27 +127,19 @@
             font-size: 1rem;
             font-family: "Inclusive Sans", sans-serif;
         }
+    }
 
         a{
             font-size: 1rem;
             font-family: "Inclusive Sans", sans-serif;
         }
 
-        #top-content {
-            max-width: 44em;
-            margin: auto;
-        }
 
-        #home-columns {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            grid-template-rows: auto;
-            justify-content: center;
-        }
+
     }
 
     #about {
-        margin: auto 1dvw;
+        margin-inline-start: 1dvw;
 
         h1 {
             font-size: 2rem;
@@ -189,6 +236,7 @@
             text-rendering: optimizeLegibility;
             font-kerning: normal;
         }
+        h1, h2 {font-family: serif;}
 
         body > ul {
             width: 100%;
@@ -334,36 +382,130 @@
     }
 
 }
+
+
+    /*Insert media query for small screens (width< 30rem) to create hamburglar menu*/
+    @media (max-width: 1024px) {
+
+    }
+
+
+
+
+
+
 @layer theme {
     :root{
-        --dark-nav-color:#687257ff;
-        --dark-bg-color: #2e2e2f;
-        --dark-heading-color: #EBF5DE;
-        --dark-link-color: #C0C77A;
+        /*color palette*/
+        --off-black: #2e2e2f;
+        --army-green: #687257ff;
+        --honeydew: #EBF5DE;
+        --olive: #C0C77A;
+        --red: #FF6161;
+
+        /*page defaults */
+        --nav-color:var(--army-green,#687257ff);
+        --nav-btn-color: var(--army-green,#687257ff);
+        --bg-color: #2e2e2f;
+        --heading-color: #EBF5DE;
+        --text-color: white;
+        --nav-link-color: #C0C77A;
+        --link-color: #C0C77A;
         --footer-text-color: #C0C77A;
         --form-validation-error-color: #FF6161;
     }
+    body[data-theme="light"] {
+        --nav-color: #FCF4E1;
+        --bg-color: #FCF4E1;
+        --heading-color: #5A716A;
+        --text-color: #2e2e2f;
+        --link-color: #0341A5;
 
-    nav {
-        background-color: var(--dark-nav-color, #687257ff);
+            .toggle-label{
+                background-color: #ECE4D1;
+                margin-left: 60px;
+            }
+
+            .toggle-label:after {
+                background-color: white;
+                transform: translateX(100%);
+                left: 10px;
+            }
+    }
+
+    header {
+        width: 100dvw;
+        label svg{
+            display: block;
+            position: absolute;
+            z-index:100;
+            &.sun{
+                left: 90px;
+            }
+            &.moon{
+                left: -40px;
+            }
+
+        }
+        .toggle-label {
+            display: block;
+            position: relative;
+            height: 2em;
+            width: 5em;
+            border-radius: 3em;
+            background-color: #3e3e3f;
+            margin: 1em 90px;
+            transition: background-color 0.3s;
+
+            &:after {
+                content: "";
+                width: 2em;
+                height: 2em;
+                border-radius: 100%;
+                background-color: black;
+                position: absolute;
+                top: 0px;
+                left: 5px;
+            }
+        }
+        nav {
+            background-color: var(--nav-color, #687257ff);
+            li{
+                background-color: var(--nav-btn-color, #687257ff);
+            }
+            a {
+                color: var(--nav-link-color, #687257ff);
+            }
+        }
     }
     body {
-        background-color: var(--dark-bg-color, #2e2e2f) ;
+        background-color: var(--bg-color, #2e2e2f) ;
     }
     h1, h2, h3 {
-        color: var(--dark-heading-color,#EBF5DE);
+        color: var(--heading-color,#EBF5DE);
     }
 
-    p {
-        color: white;
+    output, p {
+        color: var(--text-color,#EBF5DE);
     }
+    output{
+        display: block;
+        border: 2px dotted #EBF5DE;
+        width: 100dvw;
+        height: 2em;
+    }
+
     a{
-        color:  var(--dark-link-color, #C0C77A);
+        color:  var(--link-color, #C0C77A);
     }
 
     footer > p {
         color: var(--footer-text-color, lightgray);
     }
+/*needs media query to set fallback*/
+  .empty{
+      color: var(--bg-color, #2e2e2f)
+  }
 
     #resume {
         --resume-text-color: white;
@@ -371,7 +513,7 @@
             background-color: #fdfdfd;
         }
         main{
-            border: 2px dashed var(--dark-heading-color);
+            border: 2px dashed var(--heading-color);
             width: max-content;
 
             td, li, a{
@@ -424,20 +566,29 @@
             }
         }
 
-        input:user-invalid {
+        input:user-invalid, textarea:user-invalid {
             border: 2px dashed var(--form-validation-error-color, tomato);
         }
 
-        form button {
-            background-color: var(--dark-nav-color, DarkOliveGreen);
-            color: white;
-            border-color:var(--dark-heading-color);
-            margin-block-start: 1em;
-            border-radius: 5%;
-            font-size: 1.5em;
-            font-family: "Inclusive Sans", sans-serif;
-
+        form {
+            button {
+                background-color: var(--nav-color, DarkOliveGreen);
+                color: white;
+                border-color:var(--heading-color);
+                margin-block-start: 1em;
+                border-radius: 5%;
+                font-size: 1.5em;
+                font-family: "Inclusive Sans", sans-serif;}
+            .warning{
+                border: 2px solid yellow;
+            }
         }
+
+
+    project-card{
+        img{ border: 2px solid var(--honeydew, #EBF5DEFF)}
+    }
+
 
     }
 
