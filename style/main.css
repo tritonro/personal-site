@@ -10,15 +10,16 @@
 
     @font-face {
         font-family: "Literata";
-        src: url(/fonts/Literata-Regular.woff2) format('woff2'),
-        url(/fonts/Literata-Regular.woff) format('woff'),
-        url(/fonts/Literata-Regular.ttf) format('truetype');
+        src: url(../fonts/Literata-Regular.woff2) format('woff2'),
+        url(../fonts/Literata-Regular.woff) format('woff'),
+        url(../fonts/Literata-Regular.ttf) format('truetype');
         font-display: swap;
     }
     :root {
         margin: 0;
         padding: 0;
         box-sizing: border-box;
+        all: unset;
     }
 
     header {
@@ -40,8 +41,6 @@
 
             li {
                 list-style: none;
-                border: 1px solid grey;
-                border-radius: 4px;
                 min-width: fit-content;
                 flex: 1;
                 text-align: center;
@@ -57,25 +56,47 @@
     }
     h1, h2{
         font-family: "Literata", serif;
-    }
-
-
-        a,p {
-            font-size: 1rem;
-            font-family: "Inclusive Sans", sans-serif;
-            line-height:  1.6rem;
-
+        > a {
+            font-size: unset;
+            font-family:unset;
         }
+    }
+    a,p {
+        font-size: 1rem;
+        font-family: "Inclusive Sans", sans-serif;
+        line-height:  1.6rem;
+
+    }
     project-container{
         margin-inline-start: 1dvw;
+        width: 100%
+
     }
     project-card{
-        img {
+        display: grid;
+        grid-template-columns: 25% 75%;
+        grid-template-rows: 3fr;
+        -grid-auto-flow: column;
+        picture > img{
             max-width: 200px;
-            grid-columns: 1;
+            grid-column-start: 1;
+            grid-row-start: 1;
+            grid-row-end: 3;
         }
+        h2{
+            grid-row-start:1;
+        }
+
+        p{
+            grid-row-start:2;
+            +p{
+                grid-row-start:3;
+            }
+        }
+
+
       div{
-          grid-columns: 2;
+          grid-column-start: 2;
           border: 1px dashed green;
       }
 
@@ -109,10 +130,9 @@
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
             grid-template-rows: auto;
-            justify-content: center;
-        }
-        section{
-            margin: auto;
+            border: 1px dotted pink;
+            margin-inline: 12em;
+
         }
 
         h1 {
@@ -127,6 +147,11 @@
             font-size: 1rem;
             font-family: "Inclusive Sans", sans-serif;
         }
+       #home-chat{
+           border: 1px dashed green;
+           text-align: center; 
+       }
+
     }
 
         a{
@@ -136,16 +161,22 @@
 
 
 
+
+
+
     }
 
     #about {
         margin-inline-start: 1dvw;
 
+
         h1 {
             font-size: 2rem;
             text-align: center;
         }
-
+        li{
+            color: var(--text-color, white);
+        }
         p, a {
             font-family: "Inclusive Sans", sans-serif;
         }
@@ -174,7 +205,8 @@
         }
 
         .not-aside {
-            margin-inline: 3dvw;
+            margin-inline:3dvw;
+            max-width: 35rem;
         }
 
         @media (max-width: 860px) {
@@ -185,6 +217,8 @@
 
         .not-aside {
             -grid-column-start: 2;
+            text-overflow: ellipsis;
+            overflow: hidden;
         }
 
         img {
@@ -193,9 +227,17 @@
     }
 
     #now {
-        p, a {
+        p{font-family: "Inclusive Sans", sans-serif;}
+        p, a, li {
+            color: var(--text-color, white);
             font-family: "Inclusive Sans", sans-serif;
         }
+        #now-header{
+            margin-inline: 6%;
+        }
+       section{
+           margin-inline: 6%;
+       }
 
         img {
             height: 30dvh;
@@ -203,13 +245,30 @@
     }
 
     #projects {
+        --global-left-margin: 9vw;
+
+        h1{
+            margin-inline-start: var(--global-left-margin, 3vw);
+
+        }
         p, a {
+            margin-inline-start: var(--global-left-margin, 3vw);
             font-family: "Inclusive Sans", sans-serif;
         }
 
-        li {
+        #project-container, ul {
             list-style: none;
+            border: 1px solid var(--nav-color, white);
+            margin-inline-start: var(--global-left-margin, 3vw);
+            justify-content: start;
+            padding-inline-start: none;
+
+            li {
+                border: 1px solid var(--nav-color, white);
+            }
         }
+
+
     }
 
     #404 {
@@ -235,6 +294,10 @@
             overflow-wrap: break-word;
             text-rendering: optimizeLegibility;
             font-kerning: normal;
+
+            li{
+                list-style: none;
+            }
         }
         h1, h2 {font-family: serif;}
 
@@ -331,8 +394,7 @@
            override a similar rule in reveal.js */
 
         div {
-            margin: auto;
-            text-align: center;
+            text-align: left;
         }
 
         @media (max-width: 600px) {
@@ -404,12 +466,12 @@
         --red: #FF6161;
 
         /*page defaults */
-        --nav-color:var(--army-green,#687257ff);
-        --nav-btn-color: var(--army-green,#687257ff);
+        --nav-color:var(--honeydew, #EBF5DE);
+        --nav-btn-color: var(--honeydew, #EBF5DE);
         --bg-color: #2e2e2f;
         --heading-color: #EBF5DE;
         --text-color: white;
-        --nav-link-color: #C0C77A;
+        --nav-link-color: var(--off-black, #2e2e2f;)
         --link-color: #C0C77A;
         --footer-text-color: #C0C77A;
         --form-validation-error-color: #FF6161;
@@ -483,6 +545,9 @@
     }
     h1, h2, h3 {
         color: var(--heading-color,#EBF5DE);
+        > a {
+            color: unset;
+        }
     }
 
     output, p {
@@ -507,6 +572,15 @@
       color: var(--bg-color, #2e2e2f)
   }
 
+    #home {
+        button{
+            all:unset;
+            border-radius: 3%;
+            background-color: var(--honeydew, #EBF5DE);
+            h2{color: var(--off-black, #2e2e2f)}
+            width: 20em;
+        }
+    }
     #resume {
         --resume-text-color: white;
         html{
