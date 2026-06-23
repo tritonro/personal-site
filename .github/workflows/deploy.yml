@@ -17,6 +17,6 @@ jobs:
           username: ${{ secrets.DO_USER }}
           key: ${{ secrets.DO_SSH_KEY }}
           script: |
-            cd /var/www/rosarioortiz.com
+            cd /var/www/rosarioortiz.com/personal-site
             git pull origin main
             sudo systemctl reload apache2
