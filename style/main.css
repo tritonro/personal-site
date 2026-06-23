@@ -263,9 +263,7 @@
             justify-content: start;
             padding-inline-start: none;
 
-            li {
-                border: 1px solid var(--nav-color, white);
-            }
+            
         }
 
 
