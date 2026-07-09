@@ -20,6 +20,9 @@
         padding: 0;
         box-sizing: border-box;
         all: unset;
+
+        --footer-height:10rem;
+        --main-section-width: 41rem;
     }
 
     header {
@@ -61,11 +64,14 @@
             font-family:unset;
         }
     }
+    a{
+        font-size: 1rem;
+        font-family: "Inclusive Sans", sans-serif;
+    }
     a,p {
         font-size: 1rem;
         font-family: "Inclusive Sans", sans-serif;
         line-height:  1.6rem;
-
     }
     project-container{
         margin-inline-start: 1dvw;
@@ -101,19 +107,26 @@
       }
 
     }
-
-
-
     footer {
-        margin-block-start: 2.5rem;
-        padding: 2.5em 0em;
-        width: 100%;
+        --border-thickness: 12px;
+        border: var(--border-thickness, 12px) solid;
+        border-radius: 5px;
+        bottom: 0;
+        min-width: 30rem;
+        max-width: 100%;
+        height: var(--footer-height,10rem);
+        margin: 0;
+        padding-inline-start: calc(6dvw - var(--border-thickness, 12px) + 1px);
+        padding-block-start: 4%;
+        text-align: left;
+        position: relative;
 
-        p {
-            text-align: center;
+        h2, p, address {
+            margin: 0;
+            text-align: left;
+
         }
 
-        -background-color: rgba(104, 114, 87, 70);
     }
     #home {
         -text-align: center;
@@ -130,7 +143,7 @@
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
             grid-template-rows: auto;
-            border: 1px dotted pink;
+            -border: 1px dotted pink;
             margin-inline: 12em;
 
         }
@@ -151,18 +164,6 @@
            border: 1px dashed green;
            text-align: center; 
        }
-
-    }
-
-        a{
-            font-size: 1rem;
-            font-family: "Inclusive Sans", sans-serif;
-        }
-
-
-
-
-
 
     }
 
@@ -261,7 +262,7 @@
             border: 1px solid var(--nav-color, white);
             margin-inline-start: var(--global-left-margin, 3vw);
             justify-content: start;
-            padding-inline-start: none;
+            padding-inline-start: 0;
 
             
         }
@@ -422,6 +423,56 @@
 
     }
 
+    #services{
+        grid-template-columns: 1fr 1fr;
+        font-optical-sizing: auto;
+        text-wrap: pretty;
+        max-width: var(--main-section-width, 41em);
+        margin: 0;
+        padding: 6dvw;
+        padding-block-end: calc(var(--footer-height, 10rem) / 2);
+        h1{
+            margin: 0 0 4dvw;
+            display: inline-block;
+            border: 1px solid chartreuse;
+
+        }
+
+        aside{
+            margin-inline-start: 0;
+            text-wrap: inherit;
+        }
+
+        .last-block{
+            padding-block-end: 4rem;
+        }
+
+        table{
+            table-layout: fixed;
+            width: 100%;
+            min-width: 20em;
+            max-width: 50dvw;
+
+            th, td,p {
+                text-align: start;
+                font-family: "Inclusive Sans", sans-serif;
+                text-wrap: pretty;
+                padding-inline-start: 4px;
+            }
+
+            td {
+
+            }
+        }
+
+        ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+    }
+
     legend {
         color: white;
     }
@@ -443,16 +494,10 @@
 
 }
 
-
-    /*Insert media query for small screens (width< 30rem) to create hamburglar menu*/
+    /*Insert media query for small screens (width< 30rem) to create hamburger menu*/
     @media (max-width: 1024px) {
 
     }
-
-
-
-
-
 
 @layer theme {
     :root{
@@ -469,9 +514,10 @@
         --bg-color: #2e2e2f;
         --heading-color: #EBF5DE;
         --text-color: white;
-        --nav-link-color: var(--off-black, #2e2e2f;)
+        --nav-link-color: var(--off-black, #2e2e2f);
         --link-color: #C0C77A;
         --footer-text-color: #C0C77A;
+        --footer-border-color: var(--honeydew, #EBF5DE);
         --form-validation-error-color: #FF6161;
     }
     body[data-theme="light"] {
@@ -524,7 +570,7 @@
                 border-radius: 100%;
                 background-color: black;
                 position: absolute;
-                top: 0px;
+                top: 0;
                 left: 5px;
             }
         }
@@ -562,9 +608,13 @@
         color:  var(--link-color, #C0C77A);
     }
 
-    footer > p {
-        color: var(--footer-text-color, lightgray);
+    footer{
+        border-color: var(--footer-border-color, #EBF5DE);
+        p{
+            color: var(--footer-text-color, lightgray);
+        }
     }
+
 /*needs media query to set fallback*/
   .empty{
       color: var(--bg-color, #2e2e2f)
