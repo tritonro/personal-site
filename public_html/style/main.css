@@ -647,6 +647,10 @@
 
         }
 
+        footer {
+            border: none;
+        }
+
         @media print {
             --resume-text-color: black;
             html {
