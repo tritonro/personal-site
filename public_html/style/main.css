@@ -649,6 +649,10 @@
 
         footer {
             border: none;
+            /* match main's outer width (38em + 2*50px padding + 2*2px border) and centering */
+            max-width: calc(38em + 104px);
+            margin-inline: auto;
+            padding-inline-start: 0;
         }
 
         @media print {
