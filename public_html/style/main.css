@@ -635,7 +635,11 @@
         }
         main{
             border: 2px dashed var(--heading-color);
-            width: max-content;
+            width: auto;
+
+            table {
+                display: table;
+            }
 
             td, li, a{
                 color: var(--resume-text-color, white);
