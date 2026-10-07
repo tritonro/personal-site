@@ -8,41 +8,42 @@
     <link href="../style/main.css" rel="stylesheet" type="text/css">
     <link href="../favicon.ico" type="image/x-icon" rel="icon" >
 </head>
+<body>
+<!-- Static copy of the output of nav.php (current_page = 'resume'). Replace with
+     <?php $current_page = 'resume'; include __DIR__ . '/nav.php'; ?> once PHP is enabled and this page is renamed to .php -->
 <header>
-    <nav style="visibility:hidden">
+    <nav aria-label="Main">
         <ul>
             <li>
-                <a href="index.html">Home</a>
+                <a href="/index.html">Home</a>
             </li>
             <li>
-                <a href="about.html">About</a>
+                <a href="/src/about.html">About</a>
             </li>
             <li>
-                <a href="now.html">Now</a>
+                <a href="/src/now.html">Now</a>
             </li>
             <li>
-                <a href="projects.html">Projects</a>
+                <a href="/src/projects.html">Projects</a>
             </li>
             <li>
-                <a href="resume.html">Resum&#233; </a>
+                <a href="/src/resume.html" aria-current="page">Resum&#233;</a>
             </li>
             <li>
-                <a href="404.html">FAIQ</a>
+                <a href="/src/404.html">FAIQ</a>
             </li>
-
         </ul>
     </nav>
 </header>
-<body>
 <main>
     <div class="center">
         <h1><strong><span>Rosario Ortiz</span></strong></h1>
         <a href="mailto:rosario.ortizmd@gmail.com"><u>rosario.ortizmd@gmail.com</u></a>
+        <span class="math inline">|</span> <span class="math inline">(619) 678-3917</span>
         <span class="math inline">|</span> <a
             href="https://linkedin.com/in/rosario-ortiz-472064280/"><u>linkedin.com/in/rosario-ortiz-472064280/</u></a>
         <span class="math inline">|</span> <a
             href="https://github.com/tritonro"><u>https://github.com/tritonro</u></a>
-        <span class="math inline">|(619) 678 3917</span> 
     </div>
     <h2 id="education">Education</h2>
     <ul>
@@ -60,16 +61,14 @@
             </tr>
             </tbody>
         </table></li>
-        <li><p>Events Chair of ColorStack UC San Diego</p></li>
-        <li><p><span><strong>Coursework:</strong> Client &amp; Server Side Web Development, Software Engineering, Database Management
-Systems, Responsive Interaction Design, Data Structures &amp; Algorithms, Object-Oriented Programming
-(OOP), Quantitative Data Analysis, Machine Learning</span></p></li>
+        <li><p><span><strong>Coursework:</strong> Client &amp; Server Side Web Development, Software Engineering, Quantitative Data Analysis, Database Management
+Systems, Responsive Interaction Design, Data Structures &amp; Algorithms</span></p></li>
     </ul>
     <h2 id="technical-skills">Technical Skills</h2>
     <div class="itemize">
-        <p><strong>Programming Languages</strong>: Python, JavaScript, HTML, CSS, PHP, C++, C, Java, PostgreSQL<br />
-<strong>Developer Tools</strong>: Version Control Systems, GitHub, BitBucket, Docker, Figma, VS Code, WebStorm, Eclipse, Confluence, gdb debugger, WordPress, Apache<br />
-<strong>Libraries/Frameworks</strong>: React, React Native, Node.js, pandas, NumPy, Matplotlib, seaborn, mido, Expo, Jest</p>
+        <p><strong>Programming Languages</strong>: C++, C, Python, Java, JavaScript, HTML, CSS, PostgreSQL, PHP<br />
+<strong>Tools &amp; Platforms</strong>: Git, GitHub, BitBucket, Docker, Figma, VSCode, WebStorm, Confluence, Apache, WordPress, Claude Code<br />
+<strong>Libraries/Frameworks</strong>: React, React Native, Node.js, pandas, NumPy, Matplotlib, seaborn, mido, Expo</p>
     </div>
     <h2 id="experience">Experience</h2>
     <ul>
@@ -80,21 +79,21 @@ Systems, Responsive Interaction Design, Data Structures &amp; Algorithms, Object
                 <td style="text-align: right;">January 2026 – Present</td>
             </tr>
             <tr>
-                <td style="text-align: left;"><em>Freelance, Private Client</em></td>
-                <td style="text-align: right;"><em>Del Mar, CA</em></td>
+                <td style="text-align: left;"><em>Freelance, Private Clients</em></td>
+                <td style="text-align: right;"><em>San Diego, CA</em></td>
             </tr>
             </tbody>
         </table>
             <ul>
+                <li><p>Audit accessibility via WAVE Accessibility Checker and Google Sheets, remediating 27% of issues in 8 hours</p></li>
                 <li><p>Maintain a WordPress site, implementing front-end styling and content updates in a managed hosting environment</p></li>
                 <li><p>Design page layouts with interactive elements using Figma prototypes, HTML, and CSS</p></li>
-                <li><p>Perform cross-browser checks and visual QA on published changes to maintain site presentation standards</p></li>
             </ul></li>
         <li><table>
             <tbody>
             <tr>
                 <td style="text-align: left;"><strong>Information Technology (IT) Technician</strong></td>
-                <td style="text-align: right;">Jun 2024 – Present</td>
+                <td style="text-align: right;">Jun 2024 – September 2026</td>
             </tr>
             <tr>
                 <td style="text-align: left;"><em>University of California, San Diego</em></td>
@@ -103,11 +102,9 @@ Systems, Responsive Interaction Design, Data Structures &amp; Algorithms, Object
             </tbody>
         </table>
             <ul>
-                <li><p>Handle over 2,000 service tickets in ServiceNow, ensuring proper triage and escalation of complex issues to external tier 2/3, departmental IT, and external support groups (Health IT, Finance, and HR departments).</p></li>
-                <li><p>Troubleshoot networking, software, and hardware issues for 80,000 user organization via phone, Zoom, ServiceNow, and in-person</p></li>
-                <li><p>Develop and document time-keeping software using Git/BitBucket, React, and Confluence</p></li>
-                <li><p>Utilized Cisco ISE, Cisco DNAC, Infoblox NetMRI, and Infoblox Grid to diagnose wired and wireless issues.</p></li>
-                <li><p>Communicate with patience and kindness consistently praised by users in 90% of feedback audits</p></li>
+                <li><p>Worked with a small, diverse section the Service Desk to adopt a parent-child ticket structure during a major student system launch, reducing duplicate handling and enabling coordinated updates across hundreds of related cases</p></li>
+                <li><p>Identified 21 relevant tickets among 500+ reports under a four-hour deadline, uncovering a recurring pattern that helped the technical team determine the root cause</p></li>
+                <li><p>Served as a communication link between academic staff and engineering teams, helping identify affected users and applications and track resolution progress</p></li>
             </ul></li>
         <li><table>
             <tbody>
@@ -122,9 +119,9 @@ Systems, Responsive Interaction Design, Data Structures &amp; Algorithms, Object
             </tbody>
         </table>
             <ul>
-                <li><p>Developed React Native mobile application for iOS &amp; Android with live streaming and show schedules</p></li>
                 <li><p>Accelerated onboarding for team of 5 by documenting improved environment setup for MacOS, demonstrating analytical thinking</p></li>
-                <li><p>Adapted legacy website code using Apache, PHP, WordPress, MySQL, and Spinitron API towards new mobile app</p></li>
+                <li><p>Developed React Native/Expo mobile app for radio listening and interaction within 3 months</p></li>
+                <li><p>Adapted website code using Apache, PHP, Wordpress, MySQL, and Spinitron API</p></li>
             </ul></li>
     </ul>
     <h2 id="projects">Projects</h2>
@@ -133,16 +130,17 @@ Systems, Responsive Interaction Design, Data Structures &amp; Algorithms, Object
             <tbody>
             <tr>
                 <td style="text-align: left;"><strong>Time Keeping &amp; Scheduling App</strong> <span
-                        class="math inline"></span> <em>HTML, CSS, React, Node.js, BitBucket,
+                        class="math inline">|</span> <em>HTML, CSS, React, Node.js, BitBucket,
                     MySQL</em></td>
-                <td style="text-align: right;">May 2025 – Present</td>
+                <td style="text-align: right;">May 2025 – April 2026</td>
             </tr>
             </tbody>
         </table>
             <ul>
-                <li><p>Built React components with semantic HTML5 validated through Lighthouse accessibility audits</p></li>
-                <li><p>Implemented CRUD operations for editable time sheets and shift notes with real-time validation</p></li>
-                <li><p>Integrated custom REST API with JavaScript Date API to validate and calculate time sheet data from SQL database</p></li>
+                <li><p>Improved Lighthouse accessibility scores by 5% per page through semantic HTML</p></li>
+                <li><p>Separated concerns using React components to implement time sheet UI</p></li>
+                <li><p>Developed key functionality for updating employee schedules, editable time sheets, and shift notes within state on frontend of web application</p></li>
+                <li><p>Integrated JavaScript's Date API and internal API to validate and calculate time sheet data from SQL database</p></li>
             </ul></li>
         <li><table>
             <tbody>
@@ -155,11 +153,10 @@ Systems, Responsive Interaction Design, Data Structures &amp; Algorithms, Object
             </tbody>
         </table>
             <ul>
-                <li><p>Lead development as #1 contributor on 11-person Agile team, writing 2,861 lines of code across 96 commits</p></li>
-                <li><p>Refactor &amp; debug to remove 1,971 lines from code base, reducing technical debt by 7%</p></li>
-                <li><p>Architected localStorage-based data management system using indexing patterns for efficient habit tracking</p></li>
-                <li><p>Increased engagement with Agile methodology by automating stand-up prompts using Slack and RemindBot</p></li>
-                <li><p>Established CI/CD pipeline using GitHub Actions for automated testing and deployment throughout software development lifecycle</p></li>
+                <li><p>#1 contributor within 11 developer team, adding 2,861 lines of CRUD operation code within 96 commits</p></li>
+                <li><p>Refactored &amp; debugged to remove 1,971 lines from code base</p></li>
+                <li><p>Designed &amp; documented a client-side data management approach to improve responsiveness and maintainability</p></li>
+                <li><p>Increased engagement with Agile methodology by automating stand-up prompts</p></li>
             </ul></li>
     </ul>
 </main>
