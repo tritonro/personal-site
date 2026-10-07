@@ -1,7 +1,0 @@
-# The resume page is now PHP (so it can include nav.php), but every existing
-# link and printed resume points at /src/resume.html. Serve the PHP page at
-# the old URL. Requires mod_rewrite and AllowOverride FileInfo for this dir.
-<IfModule mod_rewrite.c>
-    RewriteEngine On
-    RewriteRule ^resume\.html$ resume.php [L]
-</IfModule>
