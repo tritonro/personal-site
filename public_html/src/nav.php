@@ -18,7 +18,6 @@ $nav_links = [
     'now'      => ['/src/now.html',      'Now'],
     'projects' => ['/src/projects.html', 'Projects'],
     'resume'   => ['/src/resume.html',   'Resum&#233;'], // label is pre-escaped HTML
-    'faiq'     => ['/src/404.html',      'FAIQ'],
 ];
 $current_page = $current_page ?? '';
 ?>
