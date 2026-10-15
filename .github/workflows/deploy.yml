@@ -16,7 +16,10 @@ jobs:
           host: ${{ secrets.DO_HOST }}
           username: ${{ secrets.DO_USER }}
           key: ${{ secrets.DO_SSH_KEY }}
+          script_stop: true
           script: |
+            set -e
+            git config --global --add safe.directory /var/www/rosarioortiz.com/personal-site
             cd /var/www/rosarioortiz.com/personal-site
             git pull origin main
             sudo systemctl reload apache2
