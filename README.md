@@ -8,9 +8,9 @@ This site is a work in-progress, and that's intentional. I'm limiting my use of 
 - Help remembering terminal commands on my web server 
 - Asking questions about server configuration files 
 - Debugging issues with my CI/CD pipeline
-- Help automating routine tasks, like updating my resume and renewing my SSL certs 
+- Help automating routine tasks, like updating my resume and drafting issues 
 
 # How I'm NOT Using AI 
 - Designing the look of this site
 - Implementing frontend features
-- Writing site content for me (I may ask it for feedback on my own writing from time to time)
+- Writing site content for me (I may ask it for feedback on my own writing from time to time. If you're aware of any good human-made copywriting resources, please send them my way!)
