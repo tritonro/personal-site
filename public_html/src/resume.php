@@ -9,32 +9,9 @@
     <link href="../favicon.ico" type="image/x-icon" rel="icon" >
 </head>
 <body>
-<!-- Static copy of the output of nav.php (current_page = 'resume'). Replace with
-     <?php $current_page = 'resume'; include __DIR__ . '/nav.php'; ?> once PHP is enabled and this page is renamed to .php -->
-<header>
-    <nav aria-label="Main">
-        <ul>
-            <li>
-                <a href="/index.html">Home</a>
-            </li>
-            <li>
-                <a href="/src/about.html">About</a>
-            </li>
-            <li>
-                <a href="/src/now.html">Now</a>
-            </li>
-            <li>
-                <a href="/src/projects.html">Projects</a>
-            </li>
-            <li>
-                <a href="/src/resume.html" aria-current="page">Resum&#233;</a>
-            </li>
-            <li>
-                <a href="/src/404.html">FAIQ</a>
-            </li>
-        </ul>
-    </nav>
-</header>
+<!-- Static copy of the output of header.php (current_page = 'resume'). Replace with
+     <?php $current_page = 'resume'; include __DIR__ . '/header.php'; ?> once PHP is enabled and this page is renamed to .php -->
+<?php $current_page = 'Resum&#233'; include __DIR__ . '/src/header.php'; ?>
 <main>
     <div class="center">
         <h1><strong><span>Rosario Ortiz</span></strong></h1>
