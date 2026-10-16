@@ -9,35 +9,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="../style/main.css" rel="stylesheet" type="text/css">
     <link href="../favicon.ico" type="image/x-icon" rel="icon" >
+    <script type="text/javascript" src="/scripts/theme-toggle.js"></script>
 
 
 </head>
 <body>
-<header>
-    <nav>
-        <ul>
-            <li>
-                <a href="index.html">Home</a>
-            </li>
-            <li>
-                <a href="about.html">About</a>
-            </li>
-            <li>
-                <a href="now.html">Now</a>
-            </li>
-            <li>
-                <a href="projects.html">Projects</a>
-            </li>
-            <li>
-                <a href="resume.html">Resum&#233; </a>
-            </li>
-            <li>
-                <a href="404.html">FAIQ</a>
-            </li>
-
-        </ul>
-    </nav>
-</header>
+<?php $current_page = 'about'; include __DIR__ . '/header.php'; ?>
 <main id="about">
     <h1>About Rosario</h1>
     <div class="grid-content">

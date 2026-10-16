@@ -10,53 +10,27 @@
     <link href="../style/main.css" rel="stylesheet" type="text/css">
     <link href="../favicon.ico" type="image/x-icon" rel="icon" >
     <script src="../scripts/project-elements.js"></script>
+    <script type="text/javascript" src="/scripts/theme-toggle.js"></script>
 </head>
 <body>
-<header>
-    <nav>
-        <ul>
-            <li>
-                <a href="index.html">Home</a>
-            </li>
-            <li>
-                <a href="about.html">About</a>
-            </li>
-            <li>
-                <a href="now.html">Now</a>
-            </li>
-            <li>
-                <a href="projects.html">Projects</a>
-            </li>
-            <li>
-                <a href="resume.html">Resum&#233; </a>
-            </li>
-            <li>
-                <a href="404.html">FAIQ</a>
-            </li>
-
-        </ul>
-    </nav>
-</header>
+<?php $current_page = 'projects'; include __DIR__ . '/header.php'; ?>
 <main id="projects">
     <h1>Projects</h1>
     <ul>
      
         <li>
-            <h2><a href="this.html">This site</a></h2>
+            <h2><a href="this.php">This site</a></h2>
             <p>This website was built with HTML.</p>
             <p>A preview image will be added when this site is less ugly.</p>
         </li>
-           <li>
+        <li>
             <h2><a href=".html">Habit Tracker</a></h2>
             <p>Along with a team of 12, I built a card-based Habit Tracker web app using HTML, CSS, and JavaScript.</p>
             <img>
         </li>
-        <li>
-            <h2><a href="habit-tracker.html">Habit Tracker</a></h2>
-            <p>Along with a team of 12, I built a card-based Habit Tracker web app using HTML, CSS, and JavaScript.</p>
-            <img>
-        </li>
+
     </ul>
+
 </main>
 
 </body>

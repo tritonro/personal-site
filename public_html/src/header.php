@@ -4,9 +4,9 @@
  *
  * Usage, from a .php page in public_html/src/:
  *
- *     <?php $current_page = 'resume'; include __DIR__ . '/nav.php'; ?>
+ *     <?php $current_page = 'resume'; include __DIR__ . '/header.php'; ?>
  *
- * (From a page in public_html/, include __DIR__ . '/src/nav.php' instead.)
+ * (From a page in public_html/, include __DIR__ . '/src/header.php' instead.)
  *
  * $current_page is optional; when it matches a key below, that link gets
  * aria-current="page". Links are root-absolute so the same markup works from
@@ -14,9 +14,9 @@
  */
 $nav_links = [
     'home'     => ['/',        'Home'],
-    'about'    => ['/src/about.html',    'About'],
-    'now'      => ['/src/now.html',      'Now'],
-    'projects' => ['/src/projects.html', 'Projects'],
+    'about'    => ['/src/about.php',    'About'],
+    'now'      => ['/src/now.php',      'Now'],
+    'projects' => ['/src/projects.php', 'Projects'],
     'resume'   => ['/src/resume.php',   'Resum&#233;'], // label is pre-escaped HTML
 ];
 $current_page = $current_page ?? '';

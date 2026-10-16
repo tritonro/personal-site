@@ -7,11 +7,13 @@
     <title>Resum&eacute;</title>
     <link href="../style/main.css" rel="stylesheet" type="text/css">
     <link href="../favicon.ico" type="image/x-icon" rel="icon" >
+
 </head>
 <body>
-<!-- Static copy of the output of header.php (current_page = 'resume'). Replace with
-     <?php $current_page = 'resume'; include __DIR__ . '/header.php'; ?> once PHP is enabled and this page is renamed to .php -->
-<?php $current_page = 'Resum&#233'; include __DIR__ . '/src/header.php'; ?>
+<?php $current_page = 'resume'; include __DIR__ . '/header.php'; ?>
+<aside>
+    <p>I'm still adding light-themed styles to my resume. The toggle is stuck on dark mode for now. Sorry about that !</p>
+</aside>
 <main>
     <div class="center">
         <h1><strong><span>Rosario Ortiz</span></strong></h1>

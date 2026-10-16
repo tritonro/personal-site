@@ -18,31 +18,7 @@
 
 </head>
 <body>
-<header>
-  <nav>
-    <ul>
-      <li>
-        <a href="index.html">Home</a>
-      </li>
-      <li>
-        <a href="about.html">About</a>
-      </li>
-      <li>
-        <a href="now.html">Now</a>
-      </li>
-      <li>
-        <a href="projects.html">Projects</a>
-      </li>
-      <li>
-        <a href="resume.html">Resum&#233; </a>
-      </li>
-      <li>
-        <a href="404.html">FAIQ</a>
-      </li>
-
-    </ul>
-  </nav>
-</header>
+<?php $current_page = '404'; include __DIR__ . '/header.php'; ?>
 <main id="404">
   <h1>404 Error !</h1>
   <p>Oops! I'm sorry we couldn't find what you're looking for. Please try again later.</p>

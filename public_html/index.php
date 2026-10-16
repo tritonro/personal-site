@@ -27,23 +27,23 @@
         <p>I'm a Senior majoring in Computer Science at the University of California, San Diego.
             I also work as an IT technician for UCSD's Information Technology Services.</p>
         <p>You can learn more about me on my
-            <a href="src/about.html">About</a>
+            <a href="src/about.php">About</a>
             page.</p>
 
         <p>You can see what I've been up to on my
-            <a href="src/now.html">Now</a>
+            <a href="src/now.php">Now</a>
             page.</p>
     </div>
     <div id="home-columns">
     <section class="home-sections">
         <h2>Do you care about code ?</h2>
         <p>See my projects
-        <a href="src/projects.html">here</a>.</p>
+        <a href="src/projects.php">here</a>.</p>
     </section>
     <section class="home-sections">
         <h2>Want to hire me ?</h2>
         <p>My resum&#233; is right
-            <a href="src/resume.html">here</a>. If you're still on the fence, you can see me answer some interview questions
+            <a href="src/resume.php">here</a>. If you're still on the fence, you can see me answer some interview questions
             <a href="FAIQ.html">here</a>.</p>
     </section>
     <section class="home-sections">

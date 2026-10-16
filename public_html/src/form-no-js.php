@@ -11,32 +11,8 @@
   <link href="../favicon.ico" type="image/x-icon" rel="icon" >
   <script defer type="text/javascript" src="/scripts/form-validation.js"></script>
 </head>
-<header>
-  <nav>
-    <ul>
-      <li>
-        <a href="../index.html">Home</a>
-      </li>
-      <li>
-        <a href="about.html">About</a>
-      </li>
-      <li>
-        <a href="now.html">Now</a>
-      </li>
-      <li>
-        <a href="projects.html">Projects</a>
-      </li>
-      <li>
-        <a href="resume.html">Resum&#233; </a>
-      </li>
-      <li>
-        <a href="404.html">FAIQ</a>
-      </li>
-
-    </ul>
-  </nav>
-</header>
 <body>
+<?php $current_page = 'form-no-js'; include __DIR__ . '/header.php'; ?>
 <h1>Contact Form Demo</h1>
   <main id="contact-form">
     <form id="contact-demo" method="post" action="https://httpbin.org/post">
