@@ -36,18 +36,18 @@ class projectCard extends HTMLElement {
         this.setAttribute("role", "listitem");
         
         const shadow = this.attachShadow({ mode: "open" });
-        const page = document.createElement(a);
-        page.setAttribute(this.getAttribute("data-link") ?? "#"); 
+        const page = document.createElement("a");
+        page.setAttribute("src", this.getAttribute("data-link") ?? "#"); 
 
-        const title = document.createElement(h2);
-        title.innerText = document.getAttribute("title") ?? "No title attribute"; 
-        title.appendchild(page); 
+        const title = document.createElement("h2");
+        title.innerText= this.getAttribute("title") ?? "No title attribute"; 
+        title.appendChild(page); 
 
-        const picture = document.createElement(picture); 
-        const src = document.createElement(source); 
+        const picture = document.createElement("picture"); 
+        const src = document.createElement("source"); 
         src.setAttribute("srcset", this.getAttribute("data-imgsrcs") ?? "images/form-demo.png"); 
         
-        const img = document.createElement(img); 
+        const img = document.createElement("img"); 
         img.setAttribute("src", this.getAttribute("data-imgsrcs") ?? "images/form-demo.png")
         
         picture.appendChild(src);
