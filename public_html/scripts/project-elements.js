@@ -28,10 +28,10 @@ class projectCard extends HTMLElement {
     style(){
         console.log('Styling...');
         const style = document.createElement(style);
-        style.innerText = "border: 1px solid var(--nav-color, white); background-color: pink;"
+        style.innerText = "border: 1px solid var(--nav-color, white); background-color: pink; width: 100%; height: auto;"
         return style;         
     }
-    connectedCallBack(){
+    connectedCallback(){
         console.log("A project card has been added to the page.");
         this.setAttribute("role", "listitem");
         
@@ -45,17 +45,18 @@ class projectCard extends HTMLElement {
 
         const picture = document.createElement(picture); 
         const src = document.createElement(source); 
-   
         src.setAttribute("srcset", this.getAttribute("data-imgsrcs") ?? "images/form-demo.png"); 
+        
         const img = document.createElement(img); 
         img.setAttribute("src", this.getAttribute("data-imgsrcs") ?? "images/form-demo.png")
+        
         picture.appendChild(src);
         picture.appendChild(img); 
 
         shadow.appendChild(page);
         shadow.appendChild(title);
         shadow.appendChild(picture); 
-        shadow.appenddChild(style); 
+        shadow.appendChild(style); 
 
     }
     disconnectedCallback(){
