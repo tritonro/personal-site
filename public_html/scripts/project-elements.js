@@ -1,5 +1,5 @@
 /*Project Container is a mostly empty UL extension designed to keep projectCard elements structured as list items */
-class projectContainer extends HTMLUListElement {
+class projectContainer extends HTMLElement {
     constructor(){
         super();
     }
