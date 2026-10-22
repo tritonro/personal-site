@@ -1,11 +1,59 @@
 #cloud-config
+
+ssh_pwauth: false
+
+package_update: true
+package_upgrade: true
+packages:
+  - nginx
+  - acl
+  - ufw
+  - fail2ban
+  - unattended-upgrades
+  - certbot
+  - python3-certbot-nginx
+
 write_files:
+  # Key-only SSH. The 00- prefix makes it win over any 50-cloud-init.conf.
   - path: /etc/ssh/sshd_config.d/00-key-only.conf
     permissions: "0644"
     content: |
       PasswordAuthentication no
       KbdInteractiveAuthentication no
       PermitRootLogin no
+
+  # Static site: nginx serves only public_html, not the rest of the clone.
+  - path: /etc/nginx/sites-available/rosarioortiz.com
+    permissions: "0644"
+    content: |
+      server {
+          listen 80;
+          listen [::]:80;
+          server_name rosarioortiz.com www.rosarioortiz.com;
+          root /var/www/rosarioortiz.com/personal-site/public_html;
+          index index.html;
+
+          location / { try_files $uri $uri/ =404; }
+          location ~ /\.(?!well-known) { deny all; }
+      }
+
+  - path: /etc/fail2ban/jail.d/sshd.local
+    permissions: "0644"
+    content: |
+      [sshd]
+      enabled = true
+      backend = systemd
+      maxretry = 5
+      findtime = 10m
+      bantime = 1h
+
+  - path: /etc/apt/apt.conf.d/20auto-upgrades
+    permissions: "0644"
+    content: |
+      APT::Periodic::Update-Package-Lists "1";
+      APT::Periodic::Unattended-Upgrade "1";
+      APT::Periodic::AutocleanInterval "7";
+
 # Add groups to the system
 # The following example adds the 'admingroup' group with members 'root' and 'sys'
 # and the empty group cloud-users.
@@ -36,6 +84,45 @@ users:
     sudo: ["ALL=(ALL)  NOPASSWD:/usr/bin/systemctl reload nginx, /usr/sbin/nginx -t"]
     ssh_authorized_keys:
       - ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIAQeL7op27KiFGkFxb76vDVr3Mea9YCWfvdWPN5DBnPp github-actions-deploy
+
+# Runs last, after packages are installed and users/groups exist.
+runcmd:
+  # SSH: pick up the key-only drop-in
+  - systemctl reload ssh
+
+  # Firewall: only SSH, HTTP, HTTPS
+  - ufw default deny incoming
+  - ufw default allow outgoing
+  - ufw allow 22/tcp
+  - ufw allow 80/tcp
+  - ufw allow 443/tcp
+  - ufw --force enable
+
+  # fail2ban and unattended-upgrades (config is in write_files above)
+  - systemctl enable --now fail2ban
+  - systemctl enable --now unattended-upgrades
+
+  # Webroot parent: group webdev can write, new files inherit the group
+  - mkdir -p /var/www/rosarioortiz.com
+  - chown root:webdev /var/www/rosarioortiz.com
+  - chmod 2775 /var/www/rosarioortiz.com
+  - setfacl -d -m g:webdev:rwX /var/www/rosarioortiz.com
+  # TODO: set the real repo URL (a private repo needs a deploy key for deployer)
+  - runuser -u deployer -- git clone https://github.com/<you>/<repo>.git /var/www/rosarioortiz.com/personal-site
+  - setfacl -R -m g:webdev:rwX /var/www/rosarioortiz.com
+  - find /var/www/rosarioortiz.com -type d -exec chmod g+s {} +
+
+  # nginx: enable our site, drop the default
+  - rm -f /etc/nginx/sites-enabled/default
+  - ln -sf /etc/nginx/sites-available/rosarioortiz.com /etc/nginx/sites-enabled/rosarioortiz.com
+  - nginx -t && systemctl reload nginx
+
+  # HTTPS: needs DNS for both names pointing at this droplet before first boot.
+  # TODO: replace the email with the address Let's Encrypt should use.
+  - certbot --nginx --non-interactive --agree-tos --redirect -m you@example.com -d rosarioortiz.com -d www.rosarioortiz.com
+  # Auto-renewal: the apt package ships certbot.timer; make sure it is on
+  - systemctl enable --now certbot.timer
+  - certbot renew --dry-run
 
 
 # Valid Values:

@@ -14,3 +14,11 @@ This site is a work in-progress, and that's intentional. I'm limiting my use of 
 - Designing the look of this site
 - Implementing frontend features
 - Writing site content for me (I may ask it for feedback on my own writing from time to time. If you're aware of any good human-made copywriting resources, please send them my way!)
+
+# Architecture Choices 
+
+After the PHP2Shell exploit, I had to spin up a new droplet on a newer Ubuntu version. I took this as an opportunity to re-architect my backend. 
+
+I'm switching from apache to nginx, and from php to a Jinja2 build step. 
+
+Any small bits of interactivity will be added with vanilla JS as-needed for now. 
