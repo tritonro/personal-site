@@ -9,7 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" >
     <link href="../style/main.css" rel="stylesheet" type="text/css">
     <link href="../favicon.ico" type="image/x-icon" rel="icon" >
-    <script src="../scripts/project-elements.js"></script>
+    <script src="/scripts/project-elements.js"></script>
     <script type="text/javascript" src="/scripts/theme-toggle.js"></script>
 </head>
 <body>
@@ -28,8 +28,11 @@
             <p>Along with a team of 12, I built a card-based Habit Tracker web app using HTML, CSS, and JavaScript.</p>
             <img>
         </li>
-
     </ul>
+
+    <project-container>
+        <project-card title="fake project" data-imgpaths="/images/muir_headshot_200.jpg" data-link="/"> </project-card> 
+</project-container>
 
 </main>
 
