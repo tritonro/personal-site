@@ -22,4 +22,4 @@ jobs:
             git config --global --add safe.directory /var/www/rosarioortiz.com/personal-site
             cd /var/www/rosarioortiz.com/personal-site
             git pull origin main
-            sudo systemctl reload apache2
+            sudo nginx -t && systemctl reload nginx
