@@ -8,6 +8,7 @@ This site is a work in-progress, and that's intentional. I'm limiting my use of 
 - Help remembering terminal commands on my web server 
 - Asking questions about server configuration files 
 - Debugging issues with my CI/CD pipeline
+- Looking for small syntax mistakes (missing parentheses, stray ;, etc)
 - Help automating routine tasks, like updating my resume and drafting issues 
 
 # How I'm NOT Using AI 
