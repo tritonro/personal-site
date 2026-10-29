@@ -4,19 +4,22 @@ This is a labor of love where I'm allowing myself to learn more about frontend, 
 
 This site is a work in-progress, and that's intentional. I'm limiting my use of AI on this site for my own learning & enjoyment. 
 
-# How I'm Using AI 
+## Sorry, it's actually down right now. 
+Any visits will show you a 403. I'm rebuilding. I expect to have my site back up by Tuesday. Thanks for being patient ! 
+
+## How I'm Using AI 
 - Help remembering terminal commands on my web server 
 - Asking questions about server configuration files 
 - Debugging issues with my CI/CD pipeline
 - Looking for small syntax mistakes (missing parentheses, stray ;, etc)
 - Help automating routine tasks, like updating my resume and drafting issues 
 
-# How I'm NOT Using AI 
+## How I'm NOT Using AI 
 - Designing the look of this site
 - Implementing frontend features
 - Writing site content for me (I may ask it for feedback on my own writing from time to time. If you're aware of any good human-made copywriting resources, please send them my way!)
 
-# Architecture Choices 
+## Architecture Choices 
 
 After the PHP2Shell exploit, I had to spin up a new droplet on a newer Ubuntu version. I took this as an opportunity to re-architect my backend. 
 
