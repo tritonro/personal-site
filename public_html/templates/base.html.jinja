@@ -3,24 +3,22 @@
  * any directory depth. To add or reorder a link, edit $nav_links only.
  */
  #}
-
 {% set current_page = current_page | default("home") %}
-
 <!DOCTYPE html> 
 <html lang="en"> 
     <head>
-        {%block head %}
         <title>{%block title %}{% endblock %}</title>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="author" content="Rosario Ortiz">
         <meta name="description" content="Brief description">
-        <meta property="og:title" content="{% block ogtitle %}{% endblock %}">
+        <meta property="og:title" content="{%block ogtitle %}{% endblock %}">
         <meta property="og:description" content="{% block ogdescription %}{% endblock %}">
         {#Research ogimg default fallback#}
         {# Using a block for ogurl, will be replaced with reference to current_page link#}
         <meta property="og:url" content="{%block ogurl %}{% endblock%}"> 
         <meta property="og:site_name" content="Rosario Ortiz Web">
+        <link href="favicon.ico" type="image/x-icon" rel="icon" >
         <link href="/style/main.css" rel="stylesheet" type="text/css">
         <script type="text/javascript" src="/scripts/theme-toggle.js"></script>
         <noscript>
@@ -30,10 +28,10 @@
                 }
             </style>
         </noscript>
+        {%block head %}
         {% endblock%}
     </head>
-<body>
-
+<body data-theme="dark">
 <header>
     <nav aria-label="Main">
         <ul>
@@ -74,5 +72,4 @@
 <footer class="empty">
 </footer>
 </body>
-
 </html>
