@@ -39,7 +39,7 @@
         <ul>
 {% for p in site.pages: %}
             <li>
-                <a href={{p.link}}>{{p.display_name | safe}}</a>
+                <a href={{p.link}} {% if current_page == p.name %}aria-current="page"{% endif %}>{{p.display_name | safe}} </a>
             </li>
 {% endfor %}
         </ul>
@@ -70,6 +70,7 @@
             <input type="checkbox" id="home-theme-input" class="theme-input" />
             </div>
 </header>
+{% block main%}{% endblock %}
 <footer class="empty">
 </footer>
 </body>
