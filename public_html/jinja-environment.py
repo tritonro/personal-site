@@ -30,8 +30,8 @@ resume = Page("resume", "Resum&#233;", '/src/resume.html' )
 my_site = Site([home, about, now, projects, resume])
      
 #env.filters['upperstring'] = upperstring
-temp = env.get_template('base.html.jinja')
+temp = env.get_template('index.html.jinja')
 #any arguments to temp.render are called "context"
-base = temp.render(site=my_site)
-with open("public_html/test-renders/base.html", 'w') as f:
-    print(base, file = f)
+home = temp.render(site=my_site)
+with open("public_html/test-renders/index.html", 'w') as f:
+    print(home, file = f)
