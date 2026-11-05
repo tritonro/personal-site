@@ -1,0 +1,25 @@
+{% extends "base.html.jinja" %}
+{%block title %}Rosario's Projects{% endblock %}
+{% block head %}{% endblock %}
+{% block main %}
+<main id="projects">
+    <h1>Projects</h1>
+    <ul>
+     
+        <li>
+            <h2><a href="this.php">This site</a></h2>
+            <p>This website was built with HTML.</p>
+            <p>A preview image will be added when this site is less ugly.</p>
+        </li>
+        <li>
+            <h2><a href=".html">Habit Tracker</a></h2>
+            <p>Along with a team of 12, I built a card-based Habit Tracker web app using HTML, CSS, and JavaScript.</p>
+            <img>
+        </li>
+    </ul>
+
+    <project-container>
+        <project-card title="fake project" data-imgpaths="/images/muir_headshot_200.jpg" data-link="/"> </project-card> 
+</project-container>
+</main>
+{% endblock %}
