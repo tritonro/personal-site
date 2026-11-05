@@ -1,0 +1,40 @@
+{% extends "base.html.jinja" %}
+{%block title %}Rosario Now{% endblock %}
+{% block head %}{% endblock %}
+{% block main %}
+  <main id="now">
+    <header>
+      <h1>What I'm doing</h1>
+      <p>as of <time datetime="2025-07-13 01:34">2025-07-13 01:34</time></p>
+    </header>
+    <section>
+      <h2>Studying</h2>
+      <p> I'm taking classes in client-side web development and cryptography.
+        I'm coming off of a flu and scrambling to catch up and prepare for midterms this week.
+      </p>
+    </section>
+    <section>
+      <h2>Moving</h2>
+      <p>I will be staying with friends in between apartments next month,
+        but I need to pack up the last of my belongings first.
+      </p>
+    </section>
+    <section>
+      <h2>Crocheting</h2>
+      <p>My next project will be a giant orange pill bottle that doubles as a bag or basket (haven't decided which).
+        So far, it's just an orange circle.
+        It's my first project in the round larger than a water bottle bag, and the increases are really obvious,but I'm too lazy to frog it.
+        Now that I realize increasing in the same spot
+        <em>does</em> make an obvious difference, I will be staggering them in my next project.
+      </p>
+      <picture>
+        <source media="(width < 1024px)" srcset="../images/pill-bottle-crochet-200.jpg">
+        <source media="(width < 1500px)" srcset="../images/pill-bottle-crochet-1k.jpg">
+        <img src="../images/pill-bottle-crochet-1k.jpg.jpeg" alt="Photo of orange ball of yarn positioned above a roughly circular orange crochet fabric with paperclips marking its rows along one of its radii.">
+      </picture>
+    </section>
+  </main>
+  <footer></footer>
+</body>
+</html>
+{% endblock %}

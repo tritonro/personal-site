@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>No JS Contact Form Demo</title>
+  <meta name="description" content="A demo of a contact form that sends data to httpbin.org">
+  <meta name="keywords" content="HTML Form">
+  <meta name="author" content="Rosario Ortiz" >
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="/style/main.css" rel="stylesheet" type="text/css">
+  <link href="../favicon.ico" type="image/x-icon" rel="icon" >
+  <script defer type="text/javascript" src="/scripts/form-validation.js"></script>
+</head>
+<body>
+<?php $current_page = 'form-no-js'; include __DIR__ . '/header.php'; ?>
+<h1>Contact Form Demo</h1>
+  <main id="contact-form">
+    <form id="contact-demo" method="post" action="https://httpbin.org/post">
+      <fieldset>
+        <legend>Contact Info</legend>
+
+        <input type="tel" id="phone" name="phone" placeholder="(555) 555-5555" maxlength="20" tabindex="4">
+        <label for="phone">Phone Number</label>
+
+        <textarea name="comment" id="comment" cols="30" rows="10" maxlength="120" tabindex="3" required></textarea>
+        <label for="comment" >Comments</label>
+        <span id="character-counter"></span>
+
+        <input type="email" id="email" name="email" placeholder="janedoe@example.com"  maxlength="120" required tabindex="2">
+        <label for="email">Email</label>
+
+        <input type="text" id="fullName" name="full-name" placeholder="Jane Doe" required maxlength="120" autofocus tabindex="1">
+        <label for="fullName">Full Name</label>
+
+        <p>Fields labeled with an asterisk are required.</p>
+
+      </fieldset>
+        <input hidden type="checkbox" name="possible_bot" value="true">
+
+        <output id="error" name="error" htmlFor="fullName email comment phone" form="contact-demo"> </output>
+        <output id="info" name="info" htmlFor="fullName email comment phone"> </output>
+        <button type="submit" tabindex="5">Submit</button>
+    </form>
+  </main>
+</body>
+</html>
