@@ -3,7 +3,7 @@
  * any directory depth. To add or reorder a link, edit $nav_links only.
  */
  #}
-{% set current_page = current_page | default("home") %}
+{% set current_page = page.name | default("home") %}
 <!DOCTYPE html> 
 <html lang="en"> 
     <head>
@@ -31,13 +31,19 @@
         {%block head %}
         {% endblock%}
     </head>
+
+{% if current_page == "resume"%}
+<body data-theme="dark" id="resume">
+{% else %}
 <body data-theme="dark">
+{%endif%}
+
 <header>
     <nav aria-label="Main">
         <ul>
 {% for p in site.pages: %}
             <li>
-                <a href={{p.link}} {% if current_page == p.name %}aria-current="page"{% endif %}>{{p.display_name | safe}} </a>
+                <a href="{{p.link}}" {% if current_page == p.name %}aria-current="page"{% endif %}>{{p.display_name | safe}} </a>
             </li>
 {% endfor %}
         </ul>
