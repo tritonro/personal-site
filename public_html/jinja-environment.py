@@ -18,20 +18,32 @@ class Page:
 @dataclass
 class Site: 
    pages : list[Page]
-   def printPages(self): 
+   def print_pages(self): 
       for p in self.pages: 
          print(asdict(p))
+   def render_site(self): 
+      TEMPLATE_EXT = ".html.jinja"
+      RENDER_EXT = ".html"
+      RENDER_PATH = "public_html/test-renders/" 
+      for p in self.pages: 
+         template_filename = p.name + TEMPLATE_EXT
+         temp = env.get_template(template_filename)
+         temp = temp.render(site=self)
+         render_filename = RENDER_PATH + p.name + RENDER_EXT
+         with open(render_filename, 'w') as f:
+            print(temp, file = f)
 
-home = Page("home", "Home", "/")
+
+home = Page("index", "Home", "/")
 about = Page("about", "About", '/src/about.html')
 now = Page("now", "Now", '/src/now.html')
 projects = Page("projects", "Projects", "/src/projects.html")
 resume = Page("resume", "Resum&#233;", '/src/resume.html' )
 my_site = Site([home, about, now, projects, resume])
+my_site.render_site()
      
 #env.filters['upperstring'] = upperstring
-temp = env.get_template('index.html.jinja')
+
+
 #any arguments to temp.render are called "context"
-home = temp.render(site=my_site)
-with open("public_html/test-renders/index.html", 'w') as f:
-    print(home, file = f)
+
