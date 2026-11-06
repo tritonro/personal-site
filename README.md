@@ -5,7 +5,7 @@ This is a labor of love where I'm allowing myself to learn more about frontend, 
 This site is a work in-progress, and that's intentional. I'm limiting my use of AI on this site for my own learning & enjoyment. 
 
 ## Sorry, it's actually down right now. 
-Any visits will show you a 403. I'm rebuilding. I expect to have my site back up by Tuesday. Thanks for being patient ! 
+Any visits will show you a 403. I'm rebuilding. I expect to have my site back up by tomorrow. Thanks for being patient ! 
 
 ## How I'm Using AI 
 - Help remembering terminal commands on my web server 
