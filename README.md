@@ -2,10 +2,7 @@
 
 This is a labor of love where I'm allowing myself to learn more about frontend, backend, and CI/CD. 
 
-This site is a work in-progress, and that's intentional. I'm limiting my use of AI on this site for my own learning & enjoyment. 
-
-## Sorry, it's actually down right now. 
-Any visits will show you a 403. I'm rebuilding. I expect to have my site back up by tomorrow. Thanks for being patient ! 
+This site is a work in-progress, and that's intentional. I'm limiting my use of AI on this site for my own learning & enjoyment.
 
 ## How I'm Using AI 
 - Help remembering terminal commands on my web server 
@@ -23,6 +20,6 @@ Any visits will show you a 403. I'm rebuilding. I expect to have my site back up
 
 After the PHP2Shell exploit, I had to spin up a new droplet on a newer Ubuntu version. I took this as an opportunity to re-architect my backend. 
 
-I'm switching from apache to nginx, and from php to a Jinja2 build step. 
+I'm switched from apache to nginx, and from php to a Jinja2 build step in GitHub Actions. 
 
 Any small bits of interactivity will be added with vanilla JS as-needed for now. 
