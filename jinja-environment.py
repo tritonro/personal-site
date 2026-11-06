@@ -42,10 +42,10 @@ class Site:
 
 
 home = Page("index", "Home", "/")
-about = Page("about", "About", '/src/about.html')
-now = Page("now", "Now", '/src/now.html')
-projects = Page("projects", "Projects", "/src/projects.html")
-resume = Page("resume", "Resum&#233;", '/src/resume.html' )
+about = Page("about", "About", '/about')
+now = Page("now", "Now", '/now')
+projects = Page("projects", "Projects", "projects")
+resume = Page("resume", "Resum&#233;", 'resume' )
 my_site = Site([home, about, now, projects, resume])
 my_site.render_site()
 
