@@ -520,7 +520,7 @@
         --form-validation-error-color: #FF6161;
     }
     body[data-theme="light"] {
-        --nav-color: #FCF4E1;
+        --nav-color: var(--army-green, #687257ff); 
         --bg-color: #FCF4E1;
         --heading-color: #5A716A;
         --text-color: #2e2e2f;
@@ -636,12 +636,11 @@
         main{
             border: 2px dashed var(--heading-color);
             width: auto;
-
             table {
                 display: table;
             }
 
-            td, li, a{
+            td, ul, li, a{
                 color: var(--resume-text-color, white);
             }
 
