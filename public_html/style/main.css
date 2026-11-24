@@ -107,6 +107,9 @@
       }
 
     }
+    .series-title {
+        font-style: italic; 
+    }
     footer {
         --border-thickness: 12px;
         border: var(--border-thickness, 12px) solid;
